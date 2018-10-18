@@ -1,10 +1,11 @@
-<!doctype html>
 <!-- For internet explorer -->
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-<!-- End for internet explorer -->
+<!--[if gt IE 8]><!-->
+
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 <head>
 	<title><?php wp_title(''); ?></title>
 	<meta charset="utf-8">
@@ -47,31 +48,9 @@
 		var googletag = googletag || {};
 		googletag.cmd = googletag.cmd || [];
 	</script>
+	<script type="text/javascript" src="https://alright.com.br/cdn/alright_all.js"></script>
 
-	<script>
-		var sbCodes = ['div-gpt-ad-1538417365859-0','div-gpt-ad-1538417657304-0','div-gpt-ad-1538417657305-0','div-gpt-ad-1538417657306-0'];
-		var bbCodes = ['div-gpt-ad-153asda17365859-0','div-gpt-ad-15384qwed57304-0','div-gpt-ad-1tqss417657305-0','div-gpt-ad-15rqgr317657306-0'];
-
-
-		googletag.cmd.push(function() {
-
-			if(screen.width < 768){
-				for(let i = 0; i < sbCodes.length; i++){
-					googletag.defineSlot('/21620903742/320x100-MedicinaNet', [320, 100], sbCodes[i]).addService(googletag.pubads());
-				}
-			}else{
-				for(let i = 0; i < sbCodes.length; i++){
-					googletag.defineSlot('/21620903742/sb_1-MedicinaNet', [728, 90], sbCodes[i]).addService(googletag.pubads());
-				}
-				for(let i = 0; i < bbCodes.length; i++){
-					googletag.defineSlot('/21620903742/970x250-MedicinaNet', [[970, 90], [728, 90], [970, 250]], bbCodes[i]).addService(googletag.pubads());
-				}
-
-			}
-			googletag.pubads().enableSingleRequest();
-			googletag.enableServices();
-		});
-
+	<script>		
 		function openBusca(){
 			let caixaBusca = document.getElementById("caixa-busca");
 			let logoImg = document.getElementById("logo");
