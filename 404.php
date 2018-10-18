@@ -83,7 +83,7 @@ function char_formatter($string) {
 		$codeUl = "";
 		if(!$isMobile){?>
 			<div style="width: fit-content; margin: 0 auto;">
-				<div class="adsense-tag-sb" style='height:fit-content; width:728px;'>
+				<div class="ad-sb alright-ad" style='height:fit-content; width:728px;'>
 
 				</div>
 			</div>
@@ -91,7 +91,7 @@ function char_formatter($string) {
 			<hr style="opacity: 0.3;">
 		<?php }else{ ?>
 			<div class="ad-mobile" style="width: fit-content; margin: 0 auto;">
-				<div class="adsense-tag-lmb" style='height:100px; width:320px;'>
+				<div class="ad-lmb alright-ad" style='height:100px; width:320px;'>
 
 				</div>
 			</div>
@@ -161,14 +161,14 @@ function char_formatter($string) {
 						<hr style="opacity: 0.3;">
 						<br>
 						<div style="width: fit-content; margin: 0 auto;">
-							<div class="adsense-tag-sb" style='height:90px; width:728px;'>
+							<div class="ad-sb alright-ad" style='height:90px; width:728px;'>
 							</div>
 						</div>
 					<?php }else{ ?>
 						<hr style="opacity: 0.3;">
 						<br>
 						<div class="ad-mobile" style="width: fit-content; margin: 0 auto;">
-							<div class="adsense-tag-lmb" style='height:100px; width:320px;'>
+							<div class="ad-lmb alright-ad" style='height:100px; width:320px;'>
 
 							</div>
 						</div>
@@ -232,55 +232,36 @@ function char_formatter($string) {
 									let brElement = pElement[0].getElementsByTagName("br");
 									//let br = pElement.getElementsByTagName("br");
 									let adCode = document.createElement("div");
-									adCode.classList.add("adsense-tag-sb");
+									adCode.classList.add("ad-sb");
+									adCode.classList.add("alright-ad");
 									adCode.style.width = "728px";
 									adCode.style.height = "fit-content";
 
 									if(pElement.length > 1){
 										if(screen.width > 768){
 											let count = 1;
-											let tempSBtags = document.getElementsByClassName('adsense-tag-sb');
+											let tempSBtags = document.getElementsByClassName('ad-sb');
 											tempSBtags = tempSBtags[tempSBtags.length - 1];
 											for(let i = 0; i < pElement.length; i++){
-												if(pElement[i].offsetTop - tempSBtags.offsetTop > 550){
-													var number;
-													number=Math.floor((Math.random()*100000)+1);
-													sbCodes.push('div-gpt-ad-15384qwed57304-'+number);
-													console.log(sbCodes[sbCodes.length - 1]);
-
-													googletag.cmd.push(function() {
-														googletag.defineSlot('/21620903742/sb_1-MedicinaNet', [728, 90], sbCodes[sbCodes.length - 1]).addService(googletag.pubads());
-														googletag.pubads().enableSingleRequest();
-														googletag.enableServices();
-													});
+												if(pElement[i].offsetTop - tempSBtags.offsetTop > 550){											
 													count++;
 													console.log("Insere anúncio!");
 													//divContent.insertBefore(adCode, pElement[i].nextElementSibling);
-													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div style="width: fit-content; margin: 0 auto;">										<div class="adsense-tag-sb" style="height:90px;width:728px;"></div></div><br><hr style="opacity: 0.3;">';
-													tempSBtags = document.getElementsByClassName('adsense-tag-sb')[count];
+													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div style="width: fit-content; margin: 0 auto;">										<div class="ad-sb alright-ad" style="height:90px;width:728px;"></div></div><br><hr style="opacity: 0.3;">';
+													tempSBtags = document.getElementsByClassName('ad-sb alright-ad')[count];
 												}
 											}
 										}else{
 											let count = 1;
-											let tempLMBtags = document.getElementsByClassName('adsense-tag-lmb');
+											let tempLMBtags = document.getElementsByClassName('ad-lmb');
 											tempLMBtags = tempLMBtags[tempLMBtags.length - 1];
 											for(let i = 0; i < pElement.length; i++){
-												if(pElement[i].offsetTop - tempLMBtags.offsetTop > 550){
-													var number;
-													number=Math.floor((Math.random()*100000)+1);
-													sbCodes.push('div-gpt-ad-15384qwed57304-'+number);
-													console.log(sbCodes[sbCodes.length - 1]);
-
-													googletag.cmd.push(function() {
-														googletag.defineSlot('/21620903742/320x100-MedicinaNet', [320, 100], sbCodes[sbCodes - 1]).addService(googletag.pubads());
-														googletag.pubads().enableSingleRequest();
-														googletag.enableServices();
-													});
+												if(pElement[i].offsetTop - tempLMBtags.offsetTop > 550){										
 													count++;
 													console.log("Insere anúncio!");
 													//divContent.insertBefore(adCode, pElement[i].nextElementSibling);
-													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div class="ad-mobile" style="width: fit-content; margin: 0 auto;">										<div class="adsense-tag-lmb" style="height:fit-content;width:320px;"></div></div><br><hr style="opacity: 0.3;">';
-													tempLMBtags = document.getElementsByClassName('adsense-tag-lmb')[count];
+													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div class="ad-mobile" style="width: fit-content; margin: 0 auto;">										<div class="ad-lmb alright-ad" style="height:fit-content;width:320px;"></div></div><br><hr style="opacity: 0.3;">';
+													tempLMBtags = document.getElementsByClassName('ad-lmb alright-ad')[count];
 												}
 											}
 										}
@@ -288,7 +269,7 @@ function char_formatter($string) {
 										console.log("Só tem 1");
 										if(screen.width > 768){
 											let count = 1;
-											let tempSBtags = document.getElementsByClassName('adsense-tag-sb');
+											let tempSBtags = document.getElementsByClassName('ad-sb');
 											let spanElement = document.createElement("span");
 
 											spanElement.classList.add('breaker');
@@ -313,13 +294,13 @@ function char_formatter($string) {
 													count++;
 													console.log("Insere anúncio!");
 													//divContent.insertBefore(adCode, pElement[i].nextElementSibling);
-													allSpanEl[i].insertAdjacentHTML("afterend", '<hr style="opacity: 0.3;"><br><div style="width: fit-content; margin: 0 auto;">										<div class="adsense-tag-sb" style="height:90px;width:728px;"></div></div><br><hr style="opacity: 0.3;">');
-													tempSBtags = document.getElementsByClassName('adsense-tag-sb')[count];
+													allSpanEl[i].insertAdjacentHTML("afterend", '<hr style="opacity: 0.3;"><br><div style="width: fit-content; margin: 0 auto;">										<div class="ad-sb alright-ad" style="height:90px;width:728px;"></div></div><br><hr style="opacity: 0.3;">');
+													tempSBtags = document.getElementsByClassName('ad-sb alright-ad')[count];
 												}
 											}
 										}else{
 											let count = 1;
-											let tempLMBtags = document.getElementsByClassName('adsense-tag-lmb');
+											let tempLMBtags = document.getElementsByClassName('ad-lmb');
 											tempLMBtags = tempLMBtags[tempLMBtags.length - 1];
 											for(let i = 0; i < pElement.length; i++){
 												if(pElement[i].offsetTop - tempLMBtags.offsetTop > 550){
@@ -336,39 +317,13 @@ function char_formatter($string) {
 													count++;
 													console.log("Insere anúncio!");
 													//divContent.insertBefore(adCode, pElement[i].nextElementSibling);
-													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div class="ad-mobile" style="width: fit-content; margin: 0 auto;">										<div class="adsense-tag-lmb" style="height:fit-content;width:320px;"></div></div><br><hr style="opacity: 0.3;">';
-													tempLMBtags = document.getElementsByClassName('adsense-tag-lmb')[count];
+													pElement[i].innerHTML += '<hr style="opacity: 0.3;"><br><div class="ad-mobile" style="width: fit-content; margin: 0 auto;">										<div class="ad-lmb alright-ad" style="height:fit-content;width:320px;"></div></div><br><hr style="opacity: 0.3;">';
+													tempLMBtags = document.getElementsByClassName('ad-lmb alright-ad')[count];
 												}
 											}
 										}
 									}
-
-									document.addEventListener("DOMContentLoaded", function(event) {
-										if(screen.width < 768){
-											let adsenseTagsLMB = document.getElementsByClassName('adsense-tag-lmb');
-											for(let i = 0; i < adsenseTagsLMB.length; i++){
-												adsenseTagsLMB[i].id = sbCodes[i];
-												console.log(i + " " + adsenseTagsLMB[i].id + " " + sbCodes[i]);
-
-												googletag.cmd.push(function() { googletag.display(sbCodes[i]); });
-											}
-										}else{
-											let adsenseTagsSB = document.getElementsByClassName('adsense-tag-sb');
-											let adsenseTagsBB = document.getElementsByClassName('adsense-tag-bb');
-											for(let i = 0; i < adsenseTagsSB.length; i++){
-												adsenseTagsSB[i].id = sbCodes[i];
-												googletag.cmd.push(function() { googletag.display(sbCodes[i]); });
-											}
-											for(let i = 0; i < adsenseTagsBB.length; i++){
-												adsenseTagsBB[i].id = bbCodes[i];
-												googletag.cmd.push(function() { googletag.display(bbCodes[i]); });
-											}
-										}
-									});
-
-									document.addEventListener("DOMContentLoaded", function(event) {
-
-									});
+							
 								</script>
 
 								<script type="text/javascript">
